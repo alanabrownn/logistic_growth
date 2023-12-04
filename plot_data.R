@@ -21,14 +21,16 @@ ggplot(aes(t,N), data = growth_data) +
   #aes() describes which variables in the data should be mapped to which aesthetics - x and y
   #data = to specify which dataset to use for the plot 
   geom_point() +  #used to create scatterplots 
-  
+
   xlab("t") + #Name the x-axis "t" to represent time
   
   ylab("y") + #Name the y-axis "y" to represent number of cells
   
   theme_bw() #Theme selection
 
+
 #Plot a semi-log graph for growth_data---------------------------------------------
+
 
 ggplot(aes(t,N), data = growth_data) +
   

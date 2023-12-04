@@ -28,7 +28,9 @@ ggplot(aes(t,N), data = growth_data) +
   
   theme_bw() #Theme selection
 
+
 #Plot a semi-log graph for growth_data---------------------------------------------
+
 
 ggplot(aes(t,N), data = growth_data) +
   

@@ -63,6 +63,21 @@ summary(model2) #Summary of model
 #SUMMARY INTERPRETATION 
 
 #model 1 - linear-transformed exponential growth function
+
+#initial function: N(t) = N0e^rt
+#log-transformed function: ln(N) = ln(N0) + rt
+#as you can see, N and NO have been natural logged, but ln for rt has been cancelled out
+#Therefore, the summary interpretations:
+#intercept = log-transformed initial population size =   8.186598 
+#t = instantaneous growth rate = 0.025874
+#Actual summary
+#N0 = e^8.186598  = 3592.47981756
+#r = 0.02139
+
+#model 2 - linear model for equilibrium section
+#no-transformation was added
+#Intercept = carrying capacity = 1000000000   
+
   #initial function: N(t) = N0e^rt
   #log-transformed function: ln(N) = ln(N0) + rt
   #as you can see, N and NO have been natural logged, but ln for rt has been cancelled out
@@ -76,3 +91,4 @@ summary(model2) #Summary of model
 #model 2 - linear model for equilibrium section
   #no-transformation was added
     #Intercept = carrying capacity = 1000000000   
+

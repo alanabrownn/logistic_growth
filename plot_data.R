@@ -1,21 +1,36 @@
-#Script to plot the logistic growth data
+#Script to plot the logistic growth data---------------------------------------------
 
-growth_data <- read.csv("???")
+#Read in data------------------------------------------------------------------------
 
-install.packages("ggplot2")
+#Read in csv data file using the read.csv() function
+#Name the object growth_data
+
+growth_data <- read.csv("experiment2.csv") 
+
+#Install and attach packages---------------------------------------------------------
+
+#Install ggplot2 - used to plot the logistic graph
+#Attach ggplot2 to current R session
+
+install.packages("ggplot2") 
 library(ggplot2)
 
-ggplot(aes(t,N), data = ???) +
-  
-  geom_point() +
-  
-  xlab("t") +
-  
-  ylab("y") +
-  
-  theme_bw()
+#Plotting logistic graph for growth data--------------------------------------------
 
-ggplot(aes(t,???), data = growth_data) +
+ggplot(aes(t,N), data = growth_data) + 
+  #aes() describes which variables in the data should be mapped to which aesthetics - x and y
+  #data = to specify which dataset to use for the plot 
+  geom_point() +  #used to create scatterplots 
+  
+  xlab("t") + #Name the x-axis "t" to represent time
+  
+  ylab("y") + #Name the y-axis "y" to represent number of cells
+  
+  theme_bw() #Theme selection
+
+#Plot a semi-log graph for growth_data---------------------------------------------
+
+ggplot(aes(t,N), data = growth_data) +
   
   geom_point() +
   
@@ -23,4 +38,5 @@ ggplot(aes(t,???), data = growth_data) +
   
   ylab("y") +
   
-  scale_y_continuous(trans='log10')
+  scale_y_continuous(trans='log10') #Used to log-transform y-axis
+

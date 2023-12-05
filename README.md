@@ -237,7 +237,7 @@ Firstly, I needed to identify an equation which successfully represents exponent
 N(t) = N_0 e^{rt}
 ```
 
-Next, we can use this equation to calculate the population size at t=4980 min under *exponential growth*. The code used to do this involved parameter definition, and subsequently application of the equation:
+Next, we can use this equation to calculate the population size at t=4980 min under *exponential growth*. The code used to do this involved parameter definition, and subsequent application of the equation:
 
 ```
 NO <- 3592.472632607442
@@ -248,7 +248,7 @@ N_4980_exponential <-  N0*exp(r*t)
 N_4980_exponential
 ```
 
-**Under exponential growth, N(4980) = 3.275909e+59*
+**Under exponential growth, N(4980) = 3.275909e+59**
 
 To calculate the population size at t=4980 min for *logistic growth*, I used the initial equation as part of this code: 
 
@@ -260,9 +260,9 @@ t<- 4980
 N_4980_logistic <- (N0*K*exp(r*t))/(K-N0+N0*exp(r*t))
 N_4980_logistic
 ```
-**Under exponential growth, N(4980) = 1e+09 (aka. carrying capacity)*
+**Under exponential growth, N(4980) = 1e+09 (aka. carrying capacity)**
 
-In conclusion, the population size predicted at 4980 minutes is significantly higher when obtained from the exponential model relative to the logistic. This is unsurprising, given that exponential models assume constant and unconstrained population growth, relative to logistic models which are sigmodial shaped and comprise a stationary equilibrium phase. In terms of the biology, the logistic model takes into account diminishing resource availability and density dependence, which act to reduce population growth rate when the number of cells increase. Exponential models may not take these limiting factors into account, leaving the growth unconstrained, and theoretically allowing the number of cells to increase to a significantly higher number. For the population to reach 3.275909e+59, the carrying capacity would have to be extremely high due to a large abundance of resources being available in the culture. 
+**In conclusion**, the population size predicted at 4980 minutes is significantly higher when obtained from the exponential model relative to the logistic. This is unsurprising, given that exponential models assume constant and unconstrained population growth, relative to logistic models which are sigmodial shaped and comprise a stationary equilibrium phase. In terms of the biology, the logistic model takes into account diminishing resource availability and density dependence, which act to reduce population growth rate when the number of cells increase. Exponential models may not take these limiting factors into account, leaving the growth unconstrained, and theoretically allowing the number of cells to increase to a significantly higher number. For the population to reach 3.275909e+59, the carrying capacity would have to be extremely high due to a large abundance of resources being available in the culture. 
 
 
 ```

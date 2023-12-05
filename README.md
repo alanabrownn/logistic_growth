@@ -220,3 +220,10 @@ ggplot(aes(t,N), data = growth_data) +
 ### Conclusion
 
 Between 500-1500 minutes the model predictions are slightly under what is observed in the dataset. However, given that the red line closely matches the black circles most of the time, the model is well-fit. In conclusion, I have used linear approximation successfully to fit a logistic model to the bacterial growth dataset. 
+
+The full code is available in these files:
+`plot_data.R`
+`fit_linear_model.R`
+`plot_data_and_model.R`
+within my *logistic_growth* repository 
+

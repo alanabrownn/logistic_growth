@@ -29,21 +29,45 @@ growth_data <- read.csv("experiment2.csv")
 
 ### Initial data plots
 
-In order to examine this dataset, I first created plots using the ggplot2 package. You can find these plots and the detailed code used to produce them in my `plot_data.R` file.
+In order to examine this dataset, I first created plots using the ggplot2 package. You can find these plots plus the detailed code used to produce them in my `plot_data.R` file.
 
 Firstly, I made a graph which explored the relationship between time (x-axis) and population size (N). The code used to produce this graph was:  
 
 ```
 ggplot(aes(t,N), data = growth_data) + 
   
-  geom_point() +  #used to create scatterplots 
+  geom_point() + 
 
-  xlab("t") + #Name the x-axis "t" to represent time
+  xlab("t") + 
   
-  ylab("y") + #Name the y-axis "y" to represent number of cells
+  ylab("y") + 
   
-  theme_bw() #Theme selection
+  theme_bw() #
 ```
+
+Secondly, I made a graph which explored the relationship between time (x-axis), and the *log-transformed* values for population size (N). This *semi-logarithmic* graph is useful because it allows for simpler analysis and parameter estimation. The code used to produce this graph was: 
+
+```
+ggplot(aes(t,N), data = growth_data) +
+  
+  geom_point() +
+  
+  xlab("t") +
+  
+  ylab("y") +
+  
+  scale_y_continuous(trans='log10')
+```
+
+**These plots can be seen below**
+
+*The relationship between time (t) and population size (N)*
+![Initial plot](https://github.com/alanabrownn/logistic_growth/blob/44d5d7a2584394f28c8b8342659b008bccccc261/Initial%20plot.png)
+
+*The relationship between time (t) and log-transformed population size (log10N)*
+![Transformed initial plot](https://github.com/alanabrownn/logistic_growth/blob/ce883b54a9319a92c5ac6c481964cee8bcda9949/transformed%20initial%20plot.png)
+
+
 
 
 

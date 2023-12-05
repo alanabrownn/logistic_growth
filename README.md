@@ -71,7 +71,7 @@ ggplot(aes(t,N), data = growth_data) +
 
 From these graphs, it is evident that the population is exhibiting logistic growth. It undergoes an initial period of exponential growth, followed by a decrease in growth rate and a plateau of population size at a carrying capacity. This fits with our biological understanding set out earlier. 
 
-### Fitting models 
+### Fitting linear models 
 
 Whilst plotting the initial dataset is valuable to gain an insight to population growth, the next important step is to fit a model. Fitting a model has several benefits - it allows you to predict, extrapolate, and estimate parameters from a given relationship. Like I said previously, a logistic model is most appropriate for this data, given by the equation: 
 
@@ -173,5 +173,46 @@ This is what we also see on the graph which is a good sign
 - **NO = 3592.472632607442**
 - **r = 0.025874**
 - **K = 1000000000**
+
+### Fitting final logistic model
+Now we have obtained parameter estimates, we can input them into the logistic equation:  
+
+```math
+\begin{equation}
+N(t) = \frac{K N_0 e^{rt}}{K-N_0+N_0 e^{rt}}
+\end{equation}
+```
+
+We can create a function for the model which contains this equation:
+
+```
+logistic_fun <- function(t) {  for our model 
+  
+  N <- (N0*K*exp(r*t))/(K-N0+N0*exp(r*t))
+  
+  return(N)
+}
+```
+
+Finally, we must tell R our parameter estimates so that they can be incorporated into the equation:
+
+N0 <- 3592.47981756 #defining the parameters that we want to input from it 
+
+r <- 0.02139
+
+We can then plot a graph which contains our original data, alongside our fitted model. By doing this, you can see how representative the model is for our original dataset, and thus judge how effective our linear approximation has been. The code used for plotting this graph was:
+
+```
+ggplot(aes(t,N), data = growth_data) +
+  
+  geom_function(fun=logistic_fun, colour="red") +
+  
+  geom_point() 
+
+K <- 1000000000 
+```
+
+*You can see this plot below. Our initial data points are represented by the black circles, and the model fit by the solid red line*
+![data + model plot](https://github.com/alanabrownn/logistic_growth/blob/dccf197f9b23863e9e7170fb56330e7998b6f956/data_and_model.png)
 
 

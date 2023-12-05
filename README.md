@@ -264,7 +264,8 @@ N_4980_logistic
 
 **In conclusion**, the population size predicted at 4980 minutes is significantly higher when obtained from the exponential model relative to the logistic. This is unsurprising, given that exponential models assume constant and unconstrained population growth, relative to logistic models which are sigmodial shaped and comprise a stationary equilibrium phase. In terms of the biology, the logistic model takes into account diminishing resource availability and density dependence, which act to reduce population growth rate when the number of cells increase. Exponential models may not take these limiting factors into account, leaving the growth unconstrained, and theoretically allowing the number of cells to increase to a significantly higher number. For the population to reach 3.275909e+59, the carrying capacity would have to be extremely high due to a large abundance of resources being available in the culture. 
 
-The full code used for this questionc can be found in my 
+The full code used for this question can be found in my `Question_2_code.R` file in this `logistic_growth` repo
 
 ## Question 3) Make a graph comparing the exponential and logistic growth curves
+
 

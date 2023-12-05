@@ -7,6 +7,7 @@
 NO <- 3592.472632607442
 r <- 0.025874
 t<- 4980
+K <- 1e+09
 #using the equation:
 N_4980_exponential <-  N0*exp(r*t)
 N_4980_exponential

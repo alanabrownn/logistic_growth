@@ -88,20 +88,91 @@ But as you can see, to be able to fit this, the following parameters must be cal
 
 Being able to obtain exact parameters from a dataset is difficult. However, we can use **linear approximation** to estimate them.
 - To be able to estimate N0 and r, we can isolate and fit a linear model to the exponential growth phase. 
-- To estimate K, we can fit a linear model to the equilibrium phase.  
+- To estimate K, we can fit a linear model to the equilibrium phase.
 
+### Isolating the exponential phase to estimate N0 and r
+To be able to estimate parameters from the exponential phase, we log-transform N to linearize the relationship. To be able to isolate it, we have to select an upper limit for t and I chose 550 minutes given that the population experiences fast growth rate before this time (as evident in the graphs). The code used to subset the data and fit the linear model was:
 
+```
+data_subset1 <- growth_data %>% filter(t<550) %>% mutate(N_log = log(N))
 
+model1 <- lm(N_log ~ t, data_subset1)
+```
 
+The summary output:
 
+```
+summary(model1)
+```
 
+```
+Call:
+lm(formula = N_log ~ t, data = data_subset1)
 
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.48022 -0.28403  0.03346  0.57755  0.80621 
 
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 8.186598   0.438530   18.67 7.00e-08 ***
+t           0.025874   0.001369   18.90 6.35e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
+Residual standard error: 0.7461 on 8 degrees of freedom
+Multiple R-squared:  0.9781,	Adjusted R-squared:  0.9754 
+F-statistic: 357.2 on 1 and 8 DF,  p-value: 6.355e-08
+```
+Estimations from this output:
+- Intercept Estimate = **N0** = 8.186596
+- t Estimate = **r** = 0.025874 
 
+For this model, when K>>N0 and t is small (ie. at the start of the experiment), the linear approximation equation derived from the original, is: ln(N) = ln(N0) + rt. This means, that the estimate for N0 must be back-transformed to obtain the actual estimate. Alternatively, the estimate from r in this model represents the actual estimate so nothing has to be done. 
 
+Actual estimations from this output: 
+- **NO** = e^8.186596 (back-transform for ln) = 3592.472632607442
+- **r** = 0.025874 
 
+### Isolating the equilibrium phase to estimate K
+Next, we want to isolate the equilibrium phase. Once we've done this, we can fit a linear model whose intercept represents the carrying capacity. For the isolation, I selected a lower limit of 1500 minutes because after this time, the population remains constant. The code used to subset the data and fit the linear model was:
 
+```
+data_subset2 <- growth_data %>% filter(t>1500)
 
+model2 <- lm(N ~ 1, data_subset2)
+```
+The summary output:
 
+```
+summary(model2)
+```
+```
+Call:
+lm(formula = N ~ 1, data = data_subset2)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-193.71  -76.21  -22.21   44.04  279.29 
+
+Coefficients:
+             Estimate Std. Error  t value Pr(>|t|)    
+(Intercept) 1.000e+09  1.347e+01 74265523   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 102.5 on 57 degrees of freedom
+```
+
+The Intercept Estimate represents the carrying capacity 
+K= 1.000e+09 = 
+This is what we also see on the graph which is a good sign
+ 
+### My paramater estimates
+
+**NO = 3592.472632607442**
+**r = 0.025874**
+**K = 1000000000**
+
+### My paramater estimates
 

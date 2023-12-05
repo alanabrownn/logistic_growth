@@ -128,7 +128,7 @@ Estimations from this output:
 - Intercept Estimate = **N0** = 8.186596
 - t Estimate = **r** = 0.025874 
 
-For this model, when K>>N0 and t is small (ie. at the start of the experiment), the linear approximation equation derived from the original, is: ln(N) = ln(N0) + rt. This means, that the estimate for N0 must be back-transformed to obtain the actual estimate. For r however, no back-transformation has to be carried out given that it did not undergo a ln transformation as seen in the equation.
+For this model, when K>>N0 and t is small (ie. at the start of the experiment), the population will grow exponentially: N(t) = N0e^rt. When this is linearized by a log transformation, the relationship will follow: ln(N) = ln(N0) + rt. This means, the estimate for N0 must be back-transformed to obtain the actual estimate. For r however, no back-transformation has to be carried out given that it did not undergo a ln transformation as seen in the equation.
 
 Actual estimations from this output: 
 - **NO** = e^8.186596 (back-transform for ln) = 3592.472632607442
@@ -226,4 +226,44 @@ The full code is available in these files:
 `fit_linear_model.R`
 `plot_data_and_model.R`
 within my *logistic_growth* repository 
+
+
+
+## Question 2) comparing population size under exponential versus logistic growth
+
+Firstly, I needed to identify an equation which successfully represents exponential growth. Using our logistic growth equation as a starting point, during the exponential phase N<<K and t is small, meaning that we can simplify the equation to: 
+
+```math
+N(t) = N_0 e^{rt}
+```
+
+Next, we can use this equation to calculate the population size at t=4980 min under *exponential growth*. The code used to do this involved parameter definition, and subsequently application of the equation:
+
+```
+NO <- 3592.472632607442
+r <- 0.025874
+t<- 4980
+
+N_4980_exponential <-  N0*exp(r*t)
+N_4980_exponential
+```
+
+**Under exponential growth, N(4980) = 3.275909e+59*
+
+To calculate the population size at t=4980 min for *logistic growth*, I used the initial equation as part of this code: 
+
+```
+NO <- 3592.472632607442
+r <- 0.025874
+t<- 4980
+
+N_4980_logistic <- (N0*K*exp(r*t))/(K-N0+N0*exp(r*t))
+N_4980_logistic
+```
+**Under exponential growth, N(4980) = 1e+09 (aka. carrying capacity)*
+
+In conclusion, the population size predicted at 4980 minutes is significantly higher when obtained from the exponential model relative to the logistic. This is unsurprising, given that exponential models assume constant and unconstrained population growth, relative to logistic models which are sigmodial shaped and comprise a stationary equilibrium phase. In terms of the biology, the logistic model takes into account diminishing resource availability and density dependence, which act to reduce population growth rate when the number of cells increase. Exponential models may not take these limiting factors into account, leaving the growth unconstrained, and theoretically allowing the number of cells to increase to a significantly higher number. For the population to reach 3.275909e+59, the carrying capacity would have to be extremely high due to a large abundance of resources being available in the culture. 
+
+
+```
 

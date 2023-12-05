@@ -25,7 +25,9 @@ The dataset used: `experiment2.csv` file within my `experiment2.csv` repo
 This contains a column for t (time) and a column for N (population size)
 I read in this data using the read.csv() function, and stored it in an object called growth_data.
 
+```
 growth_data <- read.csv("experiment2.csv") 
+```
 
 ### Initial data plots
 
@@ -66,6 +68,30 @@ ggplot(aes(t,N), data = growth_data) +
 
 *The relationship between time (t) and log-transformed population size (log10N)*
 ![Transformed initial plot](https://github.com/alanabrownn/logistic_growth/blob/ce883b54a9319a92c5ac6c481964cee8bcda9949/transformed%20initial%20plot.png)
+
+From these graphs, it is evident that the population is exhibiting logistic growth. It undergoes an initial period of exponential growth, followed by a decrease in growth rate and a plateau of population size at a carrying capacity. This fits with our biological understanding set out earlier. 
+
+### Fitting models 
+
+Whilst plotting the initial dataset is valuable to gain an insight to population growth, the next important step is to fit a model. Fitting a model has several benefits - it allows you to predict, extrapolate, and estimate parameters from a given relationship. Like I said previously, a logistic model is most appropriate for this data, given by the equation: 
+
+```math
+\begin{equation}
+N(t) = \frac{K N_0 e^{rt}}{K-N_0+N_0 e^{rt}}
+\end{equation}
+```
+
+But as you can see, to be able to fit this, the following parameters must be calculated:
+- N0 (initial population size)
+- r (growth rate)
+- K (carrying capacity)
+
+Being able to obtain exact parameters from a dataset is difficult. However, we can use **linear approximation** to estimate them.
+- To be able to estimate N0 and r, we can isolate and fit a linear model to the exponential growth phase. 
+- To estimate K, we can fit a linear model to the equilibrium phase.  
+
+
+
 
 
 

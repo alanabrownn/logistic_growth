@@ -128,7 +128,7 @@ Estimations from this output:
 - Intercept Estimate = **N0** = 8.186596
 - t Estimate = **r** = 0.025874 
 
-For this model, when K>>N0 and t is small (ie. at the start of the experiment), the linear approximation equation derived from the original, is: ln(N) = ln(N0) + rt. This means, that the estimate for N0 must be back-transformed to obtain the actual estimate. Alternatively, the estimate from r in this model represents the actual estimate so nothing has to be done. 
+For this model, when K>>N0 and t is small (ie. at the start of the experiment), the linear approximation equation derived from the original, is: ln(N) = ln(N0) + rt. This means, that the estimate for N0 must be back-transformed to obtain the actual estimate. For r however, no back-transformation has to be carried out given that it did not undergo a ln transformation as seen in the equation.
 
 Actual estimations from this output: 
 - **NO** = e^8.186596 (back-transform for ln) = 3592.472632607442
@@ -168,11 +168,10 @@ The Intercept Estimate represents the carrying capacity
 K= 1.000e+09 = 
 This is what we also see on the graph which is a good sign
  
-### My paramater estimates
+### My final paramater estimates
 
-**NO = 3592.472632607442**
-**r = 0.025874**
-**K = 1000000000**
+- **NO = 3592.472632607442**
+- **r = 0.025874**
+- **K = 1000000000**
 
-### My paramater estimates
 

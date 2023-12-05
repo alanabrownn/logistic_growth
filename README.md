@@ -196,9 +196,11 @@ logistic_fun <- function(t) {  for our model
 
 Finally, we must tell R our parameter estimates so that they can be incorporated into the equation:
 
-N0 <- 3592.47981756 #defining the parameters that we want to input from it 
-
+```
+N0 <- 3592.47981756 
 r <- 0.02139
+K <- 1000000000
+```
 
 We can then plot a graph which contains our original data, alongside our fitted model. By doing this, you can see how representative the model is for our original dataset, and thus judge how effective our linear approximation has been. The code used for plotting this graph was:
 
@@ -209,10 +211,11 @@ ggplot(aes(t,N), data = growth_data) +
   
   geom_point() 
 
-K <- 1000000000 
 ```
 
 *You can see this plot below. Our initial data points are represented by the black circles, and the model fit by the solid red line*
+
 ![data + model plot](https://github.com/alanabrownn/logistic_growth/blob/dccf197f9b23863e9e7170fb56330e7998b6f956/data_and_model.png)
 
 
+Between 500-1500 minutes the model predictions are slightly under what is observed in the dataset. However, given that the red line closely matches the black circles most of the time, the model is well-fit. 

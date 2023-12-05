@@ -1,6 +1,6 @@
 # Assignment Questions - Alana Brown 
 
-## Question 1) Explaination of my analysis 
+## Question 1) Explanation of my analysis 
 
 ### Context 
 
@@ -165,8 +165,8 @@ Residual standard error: 102.5 on 57 degrees of freedom
 ```
 
 The Intercept Estimate represents the carrying capacity 
-K= 1.000e+09 = 
-This is what we also see on the graph which is a good sign
+K= 1.000e+09 = 1000000000
+This matches what we see on the graph which is a positive sign.
  
 ### My final paramater estimates
 
@@ -174,7 +174,7 @@ This is what we also see on the graph which is a good sign
 - **r = 0.025874**
 - **K = 1000000000**
 
-### Fitting final logistic model
+### Fitting the final logistic model
 Now we have obtained parameter estimates, we can input them into the logistic equation:  
 
 ```math
@@ -217,5 +217,6 @@ ggplot(aes(t,N), data = growth_data) +
 
 ![data + model plot](https://github.com/alanabrownn/logistic_growth/blob/dccf197f9b23863e9e7170fb56330e7998b6f956/data_and_model.png)
 
+### Conclusion
 
-Between 500-1500 minutes the model predictions are slightly under what is observed in the dataset. However, given that the red line closely matches the black circles most of the time, the model is well-fit. 
+Between 500-1500 minutes the model predictions are slightly under what is observed in the dataset. However, given that the red line closely matches the black circles most of the time, the model is well-fit. In conclusion, I have used linear approximation successfully to fit a logistic model to the bacterial growth dataset. 

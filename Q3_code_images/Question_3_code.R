@@ -1,4 +1,4 @@
-#code to produce a graph comparing exponential growth with logistic growth function
+#code to produce a graph: comparing exponential growth with logistic growth function
 
 #STEP 1) define functions for each 
 
@@ -51,7 +51,6 @@ ggplot(output_df, aes(x = t)) +
   ylab("Population size") +
   ggtitle("A comparison of exponential and logistic model output
 using paramaters estimated from our bacterial dataset")
-
 
 
   

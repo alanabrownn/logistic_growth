@@ -64,10 +64,10 @@ ggplot(aes(t,N), data = growth_data) +
 **These plots can be seen below**
 
 *The relationship between time (t) and population size (N)*
-![Initial plot](https://github.com/alanabrownn/logistic_growth/blob/44d5d7a2584394f28c8b8342659b008bccccc261/Initial%20plot.png)
+![Initial plot](https://github.com/lb23092/logistic_growth/blob/93833b2a3ee80b95c0e56d8211acedb04d821eef/Question%201%3A%20data%2C%20code%2C%20images/Initial_plot.png)
 
 *The relationship between time (t) and log-transformed population size (log10N)*
-![Transformed initial plot](https://github.com/alanabrownn/logistic_growth/blob/ce883b54a9319a92c5ac6c481964cee8bcda9949/transformed%20initial%20plot.png)
+![Transformed initial plot](https://github.com/lb23092/logistic_growth/blob/93833b2a3ee80b95c0e56d8211acedb04d821eef/Question%201%3A%20data%2C%20code%2C%20images/transformed_initial_plot.png)
 
 From these graphs, it is evident that the population is exhibiting logistic growth. It undergoes an initial period of exponential growth, followed by a decrease in growth rate and a plateau of population size at a carrying capacity. This fits with our biological understanding set out earlier. 
 
@@ -215,7 +215,7 @@ ggplot(aes(t,N), data = growth_data) +
 
 *You can see this plot below. Our initial data points are represented by the black circles, and the model fit by the solid red line*
 
-![data + model plot](https://github.com/alanabrownn/logistic_growth/blob/dccf197f9b23863e9e7170fb56330e7998b6f956/data_and_model.png)
+![data + model plot](https://github.com/lb23092/logistic_growth/blob/93833b2a3ee80b95c0e56d8211acedb04d821eef/Question%201%3A%20data%2C%20code%2C%20images/data_and_model.png)
 
 ### Conclusion
 

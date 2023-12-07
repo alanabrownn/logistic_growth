@@ -225,7 +225,7 @@ The full code is available in these files:
 `plot_data.R`
 `fit_linear_model.R`
 `plot_data_and_model.R`
-within my *logistic_growth* repository 
+within the `Question 1: data, code, images` folder of this repo. 
 
 
 
@@ -268,4 +268,37 @@ The full code used for this question can be found in my `Question_2_code.R` file
 
 ## Question 3) Make a graph comparing the exponential and logistic growth curves
 
+To make this graph, I first defined my parameters and set a time range over which I wanted it to be plotted - 500 minuites: 
+```
+NO <- 3592.472632607442
+r <- 0.025874
+K <- 1e+09
+
+time_range <- seq(0, 5000, by = 0.1)
+```
+
+Next, I created a data frame named output_df, containing our time range. I then used $ to add two more columns containing the output values from my exponential and logistic functions, using inputs from across our time range of 500:
+```
+output_df <- data.frame(t = time_range)
+output_df$exponential_output <- exponential_fun(output_df$t)
+output_df$logistic_output <- logistic_fun(output_df$t)
+```
+Finally, I plotted these functions on a graph using this code:
+
+```
+gplot(output_df, aes(x = t)) + 
+  geom_line(aes(y = logistic_output, color = "Logistic model"), size = 1.2) +
+  geom_line(aes(y = exponential_output, color = "Exponential model"), size = 1.2) +
+  ylim(0, 1.5e+09) +
+  scale_color_manual(values = c("Logistic model" = "blue", "Exponential model" = "red")) +
+  labs(color = "Model type") + 
+  xlab("Time (minuites)") +
+  ylab("Population size") +
+  ggtitle("A comparison of exponential and logistic model output
+using paramaters estimated from our bacterial dataset")
+```
+
+You can see the graph that this code produced below:
+`
+![Logistic vs exponential](![Initial plot](https://github.com/lb23092/logistic_growth/blob/b20682711312d6875eb3463d942de26b564aaa11/Q3_code_images/exponential_and_logistic_model.png)
 

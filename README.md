@@ -300,5 +300,6 @@ using paramaters estimated from our bacterial dataset")
 
 You can see the graph that this code produced below:
 
-![Logistic vs exponential](![Initial plot](https://github.com/lb23092/logistic_growth/blob/b20682711312d6875eb3463d942de26b564aaa11/Q3_code_images/exponential_and_logistic_model.png)
+![Logistic vs exponential](https://github.com/lb23092/logistic_growth/blob/b20682711312d6875eb3463d942de26b564aaa11/Q3_code_images/exponential_and_logistic_model.png)
 
+The exact code used to produce this graph can be found in the `Question_3_code.R` file in this repo.

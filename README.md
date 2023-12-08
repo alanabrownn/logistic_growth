@@ -1,8 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
 
 # Assignment Questions - Alana Brown
 
@@ -399,3 +394,5 @@ exponential](https://github.com/lb23092/logistic_growth/blob/b20682711312d6875eb
 
 The exact code used to produce this graph can be found in the
 `Question_3_code.R` file in this repo.
+
+To view Q4-5 in my `reproducible-research_homework`: https://github.com/lb23092/reproducible-research_homework.git
